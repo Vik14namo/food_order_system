@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/sidebar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +16,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-      appBar: AppBar(title: Text('Navigation Drawer')),
-    ));
+          drawer: Navbar(),
+          appBar: AppBar(
+            title: const Text('Navigation Drawer'),
+            backgroundColor: Colors.pink,
+          ),
+          body: const Center(
+              child: Text('i am here', style: TextStyle(fontSize: 40.0))),
+        ));
   }
 }
