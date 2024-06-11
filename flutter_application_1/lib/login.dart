@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/home.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
           
           Container(
             padding:EdgeInsets.zero,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/aba.jpg'), // Replace with your image path
                 fit: BoxFit.cover,
@@ -26,46 +27,46 @@ class _LoginPageState extends State<LoginPage> {
           // Login form content (shifted down slightly)
           Center(
             child: SingleChildScrollView(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   // App logo (adjust width/height as needed)
                   Image.asset(
-                    'assets/logo.png',
+                    'assets/loha.png',
                     width: 150.0,
                     height: 250.0,
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
 
                   // Username field
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       hintText: 'ID Number',
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
 
                   // Password field
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       hintText: 'Password',
                     ),
                     obscureText: true,
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
 
                   // Login button
                   ElevatedButton(
-                    child: Text('Login'),
-                    onPressed: () {
-                      // Handle login button press
+                    child: const Text('Login'),
+                    onPressed: ()=> {
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>homepage()))
                     },
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
 
                   // Sign Up text
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text('Don\'t have an account?'),

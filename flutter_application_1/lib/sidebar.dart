@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
@@ -17,7 +18,7 @@ class Navbar extends StatelessWidget {
            ListTile(
         leading: Icon(Icons.logout),
       title:Text('Sign Out'),
-      onTap:()=>print('Sign Out')),
+      onTap:()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>MyApp()))),
        
           ],
       ),
