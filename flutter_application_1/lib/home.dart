@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/login.dart';
+
 import 'package:flutter_application_1/sidebar.dart';
-import 'package:flutter_application_1/homemain.dart';
+
+import 'package:flutter_application_1/order.dart';
+
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -70,7 +73,7 @@ class _homepageState extends State<homepage> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TableViewApp()));
+                      MaterialPageRoute(builder: (context) => const ordermenu()));
 
                  
                 },
@@ -140,7 +143,7 @@ class _homepageState extends State<homepage> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
+                      MaterialPageRoute(builder: (context) => ordermenu()));
                 },
                 child: Container(
                   decoration: BoxDecoration(
