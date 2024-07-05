@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/menulist.dart';
 
 class TableCards extends StatelessWidget {
   const TableCards(
@@ -15,14 +17,14 @@ class TableCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color.fromARGB(182, 73, 75, 76),
+      color: Color.fromARGB(111, 124, 162, 163),
       child: Padding(
         padding: const EdgeInsets.only(
             left: 5.0, right: 2.0, bottom: 15.0, top: 15.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget> [
+          children: <Widget>[
             Row(
               children: [
                 const Icon(Icons.table_restaurant),
@@ -53,14 +55,9 @@ class TableCards extends StatelessWidget {
           ],
         ),
       ),
-      
     );
-   
   }
- }
-
-
-
+}
 
 class TableSelection extends StatefulWidget {
   const TableSelection({Key? key}) : super(key: key);
@@ -99,7 +96,6 @@ class _TableSelectionState extends State<TableSelection> {
   void handleOrderButton(int tableNumber) {
     // Implement logic for taking order for the selected table
     // You can display a dialog or navigate to an order screen
-    print('Order button pressed for Table No $tableNumber');
+    Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
   }
 }
-
