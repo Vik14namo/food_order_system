@@ -12,13 +12,13 @@ class homepage extends StatefulWidget {
 class _homepageState extends State<homepage> {
   @override
   Widget build(BuildContext context) {
-    // double screenWidth = MediaQuery.of(context).size.width;
-    // int crossAxisCount;
-    // if (screenWidth < 600) {
-    //   crossAxisCount = 2;
-    // } else {
-    //   crossAxisCount = 4;
-    // }
+    double screenWidth = MediaQuery.of(context).size.width;
+    int crossAxisCount;
+    if (screenWidth < 600) {
+      crossAxisCount = 2;
+    } else {
+      crossAxisCount = 4;
+    }
     return Scaffold(
       drawer: const Navbar(),
       appBar: AppBar(
@@ -33,8 +33,10 @@ class _homepageState extends State<homepage> {
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: crossAxisCount,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10),
             children: [
               InkWell(
                 onTap: () {
