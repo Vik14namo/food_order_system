@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/favorite_page.dart';
 //import 'package:flutter_application_1/home.dart';
-import 'package:flutter_application_1/login.dart';
+
 import 'package:flutter_application_1/manna.dart';
 //import 'package:flutter_application_1/homemain.dart';
 import 'package:flutter_application_1/order.dart';
@@ -27,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static List<Widget> _widgetOptions = <Widget>[
     coatogrypg(),
-    LoginPage(),
+    FavoritePage(),
     ordermenu(),
   ];
 

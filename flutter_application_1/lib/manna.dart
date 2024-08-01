@@ -15,7 +15,7 @@ class _coatogrypgState extends State<coatogrypg> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(185, 174, 216, 210),
-        title: Text('Catgory of food'),
+        title: Text('Food Items'),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(kToolbarHeight + 6.0),
           child: TextField(

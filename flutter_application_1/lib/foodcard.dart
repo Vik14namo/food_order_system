@@ -11,15 +11,22 @@ class foodcatog extends StatefulWidget {
 class _foodcatogState extends State<foodcatog> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    int crossAxisCount;
+    if (screenWidth < 600) {
+      crossAxisCount = 2;
+    } else {
+      crossAxisCount = 4;
+    }
     return Scaffold(
       appBar: AppBar(title: Text('Category')),
       body: Padding(
-        padding: const EdgeInsets.all(8.0), // Reduced padding to use more space
+        padding: EdgeInsets.all(8.0), // Reduced padding to use more space
         child: GridView.count(
-          crossAxisCount: 2,
+          crossAxisCount: crossAxisCount,
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
-          children: const [
+          children: [
             DashboardOption(
               color: Color.fromARGB(113, 114, 112, 112),
               label: 'Startes',
@@ -31,7 +38,6 @@ class _foodcatogState extends State<foodcatog> {
             DashboardOption(
               color: Color.fromARGB(113, 114, 112, 112),
               label: 'South Indian',
-              showFavoriteButton: true,
             ),
             DashboardOption(
               color: Color.fromARGB(113, 114, 112, 112),
@@ -47,12 +53,11 @@ class _foodcatogState extends State<foodcatog> {
 class DashboardOption extends StatelessWidget {
   final String label;
   final Color color;
-  final bool showFavoriteButton;
+
   const DashboardOption({
     Key? key,
     required this.label,
     required this.color,
-    this.showFavoriteButton = false,
   }) : super(key: key);
 
   @override
@@ -78,35 +83,19 @@ class DashboardOption extends StatelessWidget {
                   offset: Offset(0, 3),
                 )
               ]),
-          child: Stack(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                      height: 20), // Increased space between icon and text
-                  Text(
-                    label,
-                    style: TextStyle(
-                      fontSize: 20, // Increased text size
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 11, 11, 11),
-                    ),
-                  ),
-                ],
-              ),
-              if (showFavoriteButton)
-                Positioned(
-                  top: 8,
-                  right: 8,
-                  child: IconButton(
-                    icon: Icon(Icons.favorite_border),
-                    color: Colors.red,
-                    onPressed: () {
-                      // Handle favorite action here
-                    },
-                  ),
+              const SizedBox(
+                  height: 20), // Increased space between icon and text
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 20, // Increased text size
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 11, 11, 11),
                 ),
+              ),
             ],
           ),
         ),
