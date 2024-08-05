@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/cart_page.dart';
 import 'package:flutter_application_1/favorite_page.dart';
 //import 'package:flutter_application_1/home.dart';
 
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   static List<Widget> _widgetOptions = <Widget>[
     coatogrypg(),
     FavoritePage(),
-    ordermenu(),
+    CartPage(),
   ];
 
   void _onItemTapped(int index) {

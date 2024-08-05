@@ -3,13 +3,16 @@ import 'package:flutter_application_1/cardfood.dart';
 import 'package:flutter_application_1/login.dart';
 //import 'package:flutter_application_1/sidebar.dart';
 import 'package:provider/provider.dart';
+import 'cart_provider.dart';
 
-import 'favorite_page.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => FavoriteProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => FavoriteProvider()),
+        ChangeNotifierProvider(create: (_) => CartProvider()),
+      ],
       child: MyApp(),
     ),
   );
@@ -35,23 +38,11 @@ class MyApps extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Food Menu Grid'),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.favorite),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FavoritePage()),
-                );
-              },
-            ),
-          ],
-        ),
-        body: FoodMenuGrid(),
+      title: 'Food Menu',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: FoodMenuGrid(),
     );
   }
 }
