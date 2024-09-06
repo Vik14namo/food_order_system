@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/cart_page.dart';
 import 'package:flutter_application_1/favorite_page.dart';
-//import 'package:flutter_application_1/home.dart';
-
 import 'package:flutter_application_1/manna.dart';
-//import 'package:flutter_application_1/homemain.dart';
-import 'package:flutter_application_1/order.dart';
+
+
 
 class MyApp extends StatelessWidget {
   @override
